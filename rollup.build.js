@@ -27,7 +27,7 @@ var bundle = rollup.rollup({
 .then(bundle => {
     return bundle.write({
         format: 'iife',
-        dest: 'dist/bundle.es2015.js'
+        dest: '/bundle.es2015.js'
     })
 }).catch(err => console.log(err));
 

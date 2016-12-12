@@ -12,17 +12,17 @@ module.exports = function(config) {
       'node_modules/reflect-metadata/Reflect.js',
 
       // System.js for module loading
-      'node_modules/systemjs/dist/system-polyfills.js',
-      'node_modules/systemjs/dist/system.src.js',
+      'node_modules/systemjs/public/system-polyfills.js',
+      'node_modules/systemjs/public/system.src.js',
 
       // Zone.js dependencies
-      'node_modules/zone.js/dist/zone.js',
-      'node_modules/zone.js/dist/long-stack-trace-zone.js',
-      'node_modules/zone.js/dist/proxy.js',
-      'node_modules/zone.js/dist/sync-test.js',
-      'node_modules/zone.js/dist/jasmine-patch.js',
-      'node_modules/zone.js/dist/async-test.js',
-      'node_modules/zone.js/dist/fake-async-test.js',
+      'node_modules/zone.js/public/zone.js',
+      'node_modules/zone.js/public/long-stack-trace-zone.js',
+      'node_modules/zone.js/public/proxy.js',
+      'node_modules/zone.js/public/sync-test.js',
+      'node_modules/zone.js/public/jasmine-patch.js',
+      'node_modules/zone.js/public/async-test.js',
+      'node_modules/zone.js/public/fake-async-test.js',
 
       // RxJs.
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
@@ -37,22 +37,22 @@ module.exports = function(config) {
       {pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: true},
 
       // Our built application code
-      {pattern: 'dist/**/*.js', included: false, watched: true},
+      {pattern: 'public/**/*.js', included: false, watched: true},
 
       // paths loaded via Angular's component compiler
       // (these paths need to be rewritten, see proxies section)
-      {pattern: 'dist/**/*.html', included: false, watched: true},
-      {pattern: 'dist/**/*.css', included: false, watched: true},
+      {pattern: 'public/**/*.html', included: false, watched: true},
+      {pattern: 'public/**/*.css', included: false, watched: true},
 
       // paths to support debugging with source maps in dev tools
       {pattern: 'src/**/*.ts', included: false, watched: true},
-      //{pattern: 'dist/**/*.js.map', included: false, watched: false}
+      //{pattern: 'public/**/*.js.map', included: false, watched: false}
     ],
 
     // proxied base paths
     proxies: {
       // required for component assests fetched by Angular's compiler
-      "/app/": "/base/dist/app/"
+      "/app/": "/base/public/app/"
     },
 
     reporters: ['progress', 'verbose'],

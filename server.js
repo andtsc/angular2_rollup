@@ -9,6 +9,7 @@ const config = {
   dev: require('./conf/config.local.js'),
   prod: require('./conf/config.prod.js')
 };
+const paths = require('./paths.config.js');
 
 let env = process.env.NODE_ENV || 'dev';
 let ssl = false;
@@ -36,11 +37,11 @@ let live = function() {
    let liveserver = livereload.createServer({
      port: 35729
    });
-   liveserver.watch([__dirname + '/dist/assets',
-                     __dirname + '/dist/src',
-                     __dirname + '/dist/style',
-                     __dirname + '/dist/*.html',
-                     __dirname + '/dist/*.js']);
+   liveserver.watch([__dirname + '/'+paths.fsrun+'/assets',
+                     __dirname + '/'+paths.fsrun+'/src',
+                     __dirname + '/'+paths.fsrun+'/style',
+                     __dirname + '/'+paths.fsrun+'/*.html',
+                     __dirname + '/'+paths.fsrun+'/*.js']);
    console.log('Livereload available at '+host+':'+35729);
 };
 

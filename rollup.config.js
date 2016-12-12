@@ -10,7 +10,7 @@ import cleanup from 'rollup-plugin-cleanup';
 export default {
   entry: 'main.prod.js',
   format: 'iife',
-  dest: 'dist/bundle.es2015.js',
+  dest: 'public/bundle.es2015.js',
   sourceMap: false,
   plugins: [
     {
